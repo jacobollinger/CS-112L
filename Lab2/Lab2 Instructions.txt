@@ -1,0 +1,5 @@
+Lab2 
+	Design a program to display the Betsy Ross flag of the United States
+   The course page has links to an image and some specifications for
+   the current US flag to use in your design.
+   Submit a text file or a Word doc or an odt file. Do not submit a pdf file. 

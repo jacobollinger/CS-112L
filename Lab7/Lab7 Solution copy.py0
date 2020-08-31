@@ -1,0 +1,67 @@
+# Lab7: Design software to illustrate Benford's law. 
+# By Jacob Bollinger
+
+from urllib.request import urlopen
+
+# Constants
+DATA_SET = open('/Users/hackerman/Documents/VSCode/CS-112/Lab7/lab7_data.txt')
+WEB_FILE = urlopen('http://facstaff.cbu.edu/~yanushka/py/lab7/lj.txt')
+
+# Reads the file and calls the other functions
+def processFile(fIn) :
+    firstDigitList = [0] * 10
+    first2DigitsList = [0] * 100
+    lastDigitList = [0] * 10
+    last2DigitsList = [0] * 100
+    firstDigitListPercent = []
+    first2DigitsListPercent = []
+    lastDigitListPercent = []
+    last2DigitsListPercent = []
+    count = 0
+    for line in fIn :
+        line = line.decode('utf-8').strip()
+        count += 1
+        if count > 2 :
+            firstDigit = int(line[0])
+            first2Digits = int(line[:2])
+            lastDigit = int(line[-1])
+            last2Digits = int(line[-2:])
+            firstDigitList[firstDigit] += 1
+            first2DigitsList[first2Digits] += 1
+            lastDigitList[lastDigit] += 1
+            last2DigitsList[last2Digits] += 1
+    firstDigitListPercent = getPercent(firstDigitList, count)
+    first2DigitsListPercent = getPercent(first2DigitsList, count)
+    lastDigitListPercent = getPercent(lastDigitList, count)
+    last2DigitsListPercent = getPercent(last2DigitsList, count)
+    
+    returnTables(firstDigitList, firstDigitListPercent, 10)
+    
+    firstDigitData = firstDigitList, firstDigitListPercent
+    first2DigitsData = first2DigitsList, first2DigitsListPercent
+    lastDigitData = lastDigitList, lastDigitListPercent
+    last2DigitsData = last2DigitsList, last2DigitsListPercent
+    return firstDigitData, first2DigitsData, lastDigitData, last2DigitsData
+
+def getPercent(digitList, count) :
+    percent = []
+    for n in digitList :
+        percent.append(round(n / count * 100, 2))
+    return percent
+
+def returnTables(list1, list2, n) :
+    for digit in range(1, n + 1):
+        print(digit, end = '\t')
+    print('')
+    for digit in list1 :
+        print(digit, end = '\t')
+    print('')
+    for digit in list2 :
+        print(digit, end = '\t')
+    print('')
+    print(end='\t')
+
+# Outputs
+
+#print(processFile(DATA_SET))
+#print(processFile(WEB_FILE))
