@@ -1,0 +1,26 @@
+#a) Design a solution to convert miles to kilometers.
+    mi = 5
+    mkRate = 1.60934
+    km = round(mi * mkRate, 2)
+    print(mi, 'miles is equal to', km, 'kilometers')
+#b) Design a general solution to convert kilometers per minutes and seconds to miles per hour.
+    kpm = 2000
+    kps = 10000
+    kph = kpm / 60 + kps / 3600
+    kph2mphRate = 0.621371
+    mph = round(kph * kph2mphRate, 1)
+    print(kpm, 'kilometers per minute and', kps, 'kilometers per second are equal to', mph, 'miles per hour')
+#c) Design a solution to convert miles per hour to kilometers per minute.
+    mph = 50
+    mph2kpmRate = 1.60934 * 60
+    kpm = round(mph * mph2kpmRate)
+    print(mph, 'miles per hour is equal to', kpm, 'kilometers per minute')
+#d) Design a solution to convert pounds to kilograms.
+    lb = 46
+    lb2kgRate = 0.453592
+    kg = round(lb * lb2kgRate, 2)
+    print(lb, 'pounds is equal to', kg, 'kilograms')
+#e) Design a solution to convert degrees Fahrenheit to degrees Celsius.
+    f = 105
+    c = round((f - 32) * 5 / 9)
+    print(f,'degrees Fahrenheit is equal to', c, 'degrees Celsius.')

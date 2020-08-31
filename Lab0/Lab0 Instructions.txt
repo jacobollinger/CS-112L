@@ -1,0 +1,17 @@
+Lab 0
+
+Problem Convert some American units to metric.
+
+See exercise 1-2 of the pdf version of the text.
+a) Design a solution to convert miles to kilometers.
+b) Design a general solution to convert kilometers per minutes and seconds
+to miles per hour.
+c) Design a solution to convert miles per hour to kilometers per minute.
+d) Design a solution to convert pounds to kilograms.
+e) Design a solution to convert degrees Fahrenheit to degrees Celsius.
+
+Each part requires at least one complete sentence of design and a formula.
+The design explains the development of the formula.
+
+
+Use my design for a currency converter as a model for your design.
